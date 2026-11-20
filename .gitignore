@@ -1,0 +1,5 @@
+node_modules/
+results-ci/
+results-local/
+*.log
+.DS_Store

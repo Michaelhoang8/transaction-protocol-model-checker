@@ -1,0 +1,1062 @@
+[
+  {
+    "config": {
+      "name": "correct-2p",
+      "participants": 2,
+      "variant": "correct",
+      "lossBudget": 0,
+      "duplicateBudget": 0,
+      "crashBudget": 0,
+      "maxStates": 100000
+    },
+    "status": "complete",
+    "statesDiscovered": 76,
+    "statesExpanded": 76,
+    "transitionsChecked": 137,
+    "frontierRemaining": 0,
+    "maxFrontier": 17,
+    "maxDepth": 9,
+    "maxMessages": 3,
+    "derivedMessageBound": 4,
+    "terminalStates": 4,
+    "elapsedMs": 1.2913999999999959,
+    "violationCounts": {
+      "atomic-agreement": 0,
+      "commit-validity": 0,
+      "durable-monotonicity": 0
+    },
+    "violationCountUnits": {
+      "atomic-agreement": "unique discovered states",
+      "commit-validity": "unique discovered states",
+      "durable-monotonicity": "traversed transition edges"
+    },
+    "witnesses": {},
+    "depthCounts": {
+      "0": 1,
+      "1": 1,
+      "2": 4,
+      "3": 8,
+      "4": 10,
+      "5": 10,
+      "6": 12,
+      "7": 14,
+      "8": 12,
+      "9": 4
+    }
+  },
+  {
+    "config": {
+      "name": "correct-2p-faults",
+      "participants": 2,
+      "variant": "correct",
+      "lossBudget": 1,
+      "duplicateBudget": 1,
+      "crashBudget": 1,
+      "maxStates": 100000
+    },
+    "status": "complete",
+    "statesDiscovered": 11814,
+    "statesExpanded": 11814,
+    "transitionsChecked": 48784,
+    "frontierRemaining": 0,
+    "maxFrontier": 2386,
+    "maxDepth": 16,
+    "maxMessages": 6,
+    "derivedMessageBound": 7,
+    "terminalStates": 104,
+    "elapsedMs": 68.9131,
+    "violationCounts": {
+      "atomic-agreement": 0,
+      "commit-validity": 0,
+      "durable-monotonicity": 0
+    },
+    "violationCountUnits": {
+      "atomic-agreement": "unique discovered states",
+      "commit-validity": "unique discovered states",
+      "durable-monotonicity": "traversed transition edges"
+    },
+    "witnesses": {
+      "coordinator-unavailable": {
+        "label": "coordinator-unavailable",
+        "config": {
+          "name": "correct-2p-faults",
+          "participants": 2,
+          "variant": "correct",
+          "lossBudget": 1,
+          "duplicateBudget": 1,
+          "crashBudget": 1,
+          "maxStates": 100000
+        },
+        "depth": 4,
+        "steps": [
+          {
+            "action": "initial",
+            "state": {
+              "started": false,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.start",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:0",
+                "prepare:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.crash",
+            "state": {
+              "started": true,
+              "coordinatorUp": false,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:0",
+                "prepare:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 1
+            }
+          },
+          {
+            "action": "deliver.prepare:0.vote-Y",
+            "state": {
+              "started": true,
+              "coordinatorUp": false,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:1",
+                "vote-Y:0"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 1
+            }
+          },
+          {
+            "action": "deliver.prepare:1.vote-Y",
+            "state": {
+              "started": true,
+              "coordinatorUp": false,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "vote-Y:0",
+                "vote-Y:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 1
+            }
+          }
+        ]
+      }
+    },
+    "depthCounts": {
+      "0": 1,
+      "1": 2,
+      "2": 10,
+      "3": 41,
+      "4": 117,
+      "5": 246,
+      "6": 428,
+      "7": 712,
+      "8": 1138,
+      "9": 1547,
+      "10": 1948,
+      "11": 2240,
+      "12": 1899,
+      "13": 1055,
+      "14": 364,
+      "15": 64,
+      "16": 2
+    }
+  },
+  {
+    "config": {
+      "name": "correct-3p",
+      "participants": 3,
+      "variant": "correct",
+      "lossBudget": 0,
+      "duplicateBudget": 0,
+      "crashBudget": 0,
+      "maxStates": 100000
+    },
+    "status": "complete",
+    "statesDiscovered": 684,
+    "statesExpanded": 684,
+    "transitionsChecked": 2033,
+    "frontierRemaining": 0,
+    "maxFrontier": 160,
+    "maxDepth": 12,
+    "maxMessages": 5,
+    "derivedMessageBound": 6,
+    "terminalStates": 8,
+    "elapsedMs": 2.742199999999997,
+    "violationCounts": {
+      "atomic-agreement": 0,
+      "commit-validity": 0,
+      "durable-monotonicity": 0
+    },
+    "violationCountUnits": {
+      "atomic-agreement": "unique discovered states",
+      "commit-validity": "unique discovered states",
+      "durable-monotonicity": "traversed transition edges"
+    },
+    "witnesses": {},
+    "depthCounts": {
+      "0": 1,
+      "1": 1,
+      "2": 6,
+      "3": 18,
+      "4": 35,
+      "5": 51,
+      "6": 66,
+      "7": 92,
+      "8": 128,
+      "9": 137,
+      "10": 99,
+      "11": 42,
+      "12": 8
+    }
+  },
+  {
+    "config": {
+      "name": "partial-vote-commit",
+      "participants": 2,
+      "variant": "partial-vote-commit",
+      "lossBudget": 0,
+      "duplicateBudget": 0,
+      "crashBudget": 0,
+      "maxStates": 100000
+    },
+    "status": "complete",
+    "statesDiscovered": 124,
+    "statesExpanded": 124,
+    "transitionsChecked": 233,
+    "frontierRemaining": 0,
+    "maxFrontier": 31,
+    "maxDepth": 9,
+    "maxMessages": 3,
+    "derivedMessageBound": 4,
+    "terminalStates": 8,
+    "elapsedMs": 0.4890000000000043,
+    "violationCounts": {
+      "atomic-agreement": 8,
+      "commit-validity": 30,
+      "durable-monotonicity": 0
+    },
+    "violationCountUnits": {
+      "atomic-agreement": "unique discovered states",
+      "commit-validity": "unique discovered states",
+      "durable-monotonicity": "traversed transition edges"
+    },
+    "witnesses": {
+      "commit-validity": {
+        "label": "commit-validity",
+        "config": {
+          "name": "partial-vote-commit",
+          "participants": 2,
+          "variant": "partial-vote-commit",
+          "lossBudget": 0,
+          "duplicateBudget": 0,
+          "crashBudget": 0,
+          "maxStates": 100000
+        },
+        "depth": 4,
+        "steps": [
+          {
+            "action": "initial",
+            "state": {
+              "started": false,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.start",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:0",
+                "prepare:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.prepare:0.vote-Y",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:1",
+                "vote-Y:0"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.vote-Y:0",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "Y",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.persist-commit",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "C",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "Y",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          }
+        ]
+      },
+      "atomic-agreement": {
+        "label": "atomic-agreement",
+        "config": {
+          "name": "partial-vote-commit",
+          "participants": 2,
+          "variant": "partial-vote-commit",
+          "lossBudget": 0,
+          "duplicateBudget": 0,
+          "crashBudget": 0,
+          "maxStates": 100000
+        },
+        "depth": 7,
+        "steps": [
+          {
+            "action": "initial",
+            "state": {
+              "started": false,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.start",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:0",
+                "prepare:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.prepare:0.vote-Y",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:1",
+                "vote-Y:0"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.prepare:1.vote-N",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "N"
+              ],
+              "participantDecisions": [
+                "_",
+                "A"
+              ],
+              "messages": [
+                "vote-N:1",
+                "vote-Y:0"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.vote-Y:0",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "Y",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "N"
+              ],
+              "participantDecisions": [
+                "_",
+                "A"
+              ],
+              "messages": [
+                "vote-N:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.persist-commit",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "C",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "Y",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "N"
+              ],
+              "participantDecisions": [
+                "_",
+                "A"
+              ],
+              "messages": [
+                "vote-N:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.broadcast-C",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "C",
+              "decisionBroadcast": true,
+              "observedVotes": [
+                "Y",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "N"
+              ],
+              "participantDecisions": [
+                "_",
+                "A"
+              ],
+              "messages": [
+                "decision-C:0",
+                "decision-C:1",
+                "vote-N:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.decision-C:0",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "C",
+              "decisionBroadcast": true,
+              "observedVotes": [
+                "Y",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "N"
+              ],
+              "participantDecisions": [
+                "C",
+                "A"
+              ],
+              "messages": [
+                "decision-C:1",
+                "vote-N:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          }
+        ]
+      }
+    },
+    "depthCounts": {
+      "0": 1,
+      "1": 1,
+      "2": 4,
+      "3": 8,
+      "4": 12,
+      "5": 16,
+      "6": 22,
+      "7": 28,
+      "8": 24,
+      "9": 8
+    }
+  },
+  {
+    "config": {
+      "name": "prepared-timeout-abort",
+      "participants": 2,
+      "variant": "prepared-timeout-abort",
+      "lossBudget": 0,
+      "duplicateBudget": 0,
+      "crashBudget": 0,
+      "maxStates": 100000
+    },
+    "status": "complete",
+    "statesDiscovered": 127,
+    "statesExpanded": 127,
+    "transitionsChecked": 263,
+    "frontierRemaining": 0,
+    "maxFrontier": 25,
+    "maxDepth": 11,
+    "maxMessages": 3,
+    "derivedMessageBound": 4,
+    "terminalStates": 7,
+    "elapsedMs": 0.4053000000000111,
+    "violationCounts": {
+      "atomic-agreement": 4,
+      "commit-validity": 0,
+      "durable-monotonicity": 0
+    },
+    "violationCountUnits": {
+      "atomic-agreement": "unique discovered states",
+      "commit-validity": "unique discovered states",
+      "durable-monotonicity": "traversed transition edges"
+    },
+    "witnesses": {
+      "atomic-agreement": {
+        "label": "atomic-agreement",
+        "config": {
+          "name": "prepared-timeout-abort",
+          "participants": 2,
+          "variant": "prepared-timeout-abort",
+          "lossBudget": 0,
+          "duplicateBudget": 0,
+          "crashBudget": 0,
+          "maxStates": 100000
+        },
+        "depth": 9,
+        "steps": [
+          {
+            "action": "initial",
+            "state": {
+              "started": false,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.start",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "_",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:0",
+                "prepare:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.prepare:0.vote-Y",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "_"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "prepare:1",
+                "vote-Y:0"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.prepare:1.vote-Y",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "_",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "vote-Y:0",
+                "vote-Y:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.vote-Y:0",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "Y",
+                "_"
+              ],
+              "participantVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "vote-Y:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.vote-Y:1",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "_",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.persist-commit",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "C",
+              "decisionBroadcast": false,
+              "observedVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "coordinator.broadcast-C",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "C",
+              "decisionBroadcast": true,
+              "observedVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantDecisions": [
+                "_",
+                "_"
+              ],
+              "messages": [
+                "decision-C:0",
+                "decision-C:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "deliver.decision-C:0",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "C",
+              "decisionBroadcast": true,
+              "observedVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantDecisions": [
+                "C",
+                "_"
+              ],
+              "messages": [
+                "decision-C:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          },
+          {
+            "action": "participant.1.timeout-abort",
+            "state": {
+              "started": true,
+              "coordinatorUp": true,
+              "coordinatorDecision": "C",
+              "decisionBroadcast": true,
+              "observedVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantVotes": [
+                "Y",
+                "Y"
+              ],
+              "participantDecisions": [
+                "C",
+                "A"
+              ],
+              "messages": [
+                "decision-C:1"
+              ],
+              "losses": 0,
+              "duplicates": 0,
+              "crashes": 0
+            }
+          }
+        ]
+      }
+    },
+    "depthCounts": {
+      "0": 1,
+      "1": 1,
+      "2": 4,
+      "3": 10,
+      "4": 16,
+      "5": 19,
+      "6": 20,
+      "7": 21,
+      "8": 19,
+      "9": 11,
+      "10": 4,
+      "11": 1
+    }
+  }
+]

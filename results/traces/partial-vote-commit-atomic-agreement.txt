@@ -1,0 +1,27 @@
+partial-vote-commit: atomic-agreement
+Shortest BFS witness: 7 actions
+
+00 initial
+   coordinator=up/_ observed=__ durable votes=__ decisions=__
+   messages: (none)
+01 coordinator.start
+   coordinator=up/_ observed=__ durable votes=__ decisions=__
+   messages: prepare:0, prepare:1
+02 deliver.prepare:0.vote-Y
+   coordinator=up/_ observed=__ durable votes=Y_ decisions=__
+   messages: prepare:1, vote-Y:0
+03 deliver.prepare:1.vote-N
+   coordinator=up/_ observed=__ durable votes=YN decisions=_A
+   messages: vote-N:1, vote-Y:0
+04 deliver.vote-Y:0
+   coordinator=up/_ observed=Y_ durable votes=YN decisions=_A
+   messages: vote-N:1
+05 coordinator.persist-commit
+   coordinator=up/C observed=Y_ durable votes=YN decisions=_A
+   messages: vote-N:1
+06 coordinator.broadcast-C
+   coordinator=up/C observed=Y_ durable votes=YN decisions=_A
+   messages: decision-C:0, decision-C:1, vote-N:1
+07 deliver.decision-C:0
+   coordinator=up/C observed=Y_ durable votes=YN decisions=CA
+   messages: decision-C:1, vote-N:1

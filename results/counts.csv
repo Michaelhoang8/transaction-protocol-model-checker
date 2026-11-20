@@ -1,0 +1,6 @@
+scenario,status,participants,lossBudget,duplicateBudget,crashBudget,statesDiscovered,statesExpanded,transitionsChecked,frontierRemaining,maxFrontier,maxDepth,maxMessages,derivedMessageBound,terminalStates,elapsedMs,atomicAgreementStates,commitValidityStates,durableMonotonicityEdges
+correct-2p,complete,2,0,0,0,76,76,137,0,17,9,3,4,4,1.2913999999999959,0,0,0
+correct-2p-faults,complete,2,1,1,1,11814,11814,48784,0,2386,16,6,7,104,68.9131,0,0,0
+correct-3p,complete,3,0,0,0,684,684,2033,0,160,12,5,6,8,2.742199999999997,0,0,0
+partial-vote-commit,complete,2,0,0,0,124,124,233,0,31,9,3,4,8,0.4890000000000043,8,30,0
+prepared-timeout-abort,complete,2,0,0,0,127,127,263,0,25,11,3,4,7,0.4053000000000111,4,0,0

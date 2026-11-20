@@ -1,0 +1,18 @@
+correct-2p-faults: coordinator-unavailable
+Shortest BFS witness: 4 actions
+
+00 initial
+   coordinator=up/_ observed=__ durable votes=__ decisions=__
+   messages: (none)
+01 coordinator.start
+   coordinator=up/_ observed=__ durable votes=__ decisions=__
+   messages: prepare:0, prepare:1
+02 coordinator.crash
+   coordinator=down/_ observed=__ durable votes=__ decisions=__
+   messages: prepare:0, prepare:1
+03 deliver.prepare:0.vote-Y
+   coordinator=down/_ observed=__ durable votes=Y_ decisions=__
+   messages: prepare:1, vote-Y:0
+04 deliver.prepare:1.vote-Y
+   coordinator=down/_ observed=__ durable votes=YY decisions=__
+   messages: vote-Y:0, vote-Y:1

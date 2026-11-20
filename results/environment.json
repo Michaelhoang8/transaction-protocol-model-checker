@@ -1,0 +1,16 @@
+{
+  "measuredAt": "2026-11-20T23:30:14.181Z",
+  "node": "v24.20.0",
+  "platform": "win32",
+  "architecture": "x64",
+  "clock": "performance.now",
+  "sourceHashEncoding": "UTF-8, CRLF normalized to LF",
+  "sourceSha256": {
+    "src/model.ts": "93937e96c5e6709a30e94e0a4cf26230453aae080cdeee1012fee2b918597d2c",
+    "src/invariants.ts": "26c6d52622a73b4f165045c5b91c2faf5cec54b18e6e66c88775b2035d6a7c8c",
+    "src/checker.ts": "927f685ec99e59490eb39291c1a7c99bc4196d15947b07c79d1bed6afd35c800",
+    "src/scenarios.ts": "6643595a800762762b58aca24977de834b881fc538b4ad4130c299292da5c75e",
+    "scripts/check.ts": "7dee93378845b08315ba8104a56229012d461acbf3e632643415ad810af6c552"
+  },
+  "provenance": "AI-assisted finite-state portfolio study. Synthetic protocol model; actual BFS execution, no deployed cluster or TLA+/TLC run."
+}

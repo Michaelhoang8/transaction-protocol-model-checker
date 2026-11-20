@@ -1,0 +1,13 @@
+digraph witness {
+  rankdir=TB;
+  node [shape=box, fontname="monospace"];
+  s0 [label="0: initial\nC=_; votes=__; decisions=__"];
+  s1 [label="1: coordinator.start\nC=_; votes=__; decisions=__"];
+  s0 -> s1;
+  s2 [label="2: deliver.prepare:0.vote-Y\nC=_; votes=Y_; decisions=__"];
+  s1 -> s2;
+  s3 [label="3: deliver.vote-Y:0\nC=_; votes=Y_; decisions=__"];
+  s2 -> s3;
+  s4 [label="4: coordinator.persist-commit\nC=C; votes=Y_; decisions=__"];
+  s3 -> s4;
+}

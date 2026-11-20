@@ -1,0 +1,26 @@
+[
+  {
+    "file": "traces/correct-2p-faults-coordinator-unavailable.json",
+    "label": "coordinator-unavailable",
+    "scenario": "correct-2p-faults",
+    "depth": 4
+  },
+  {
+    "file": "traces/partial-vote-commit-commit-validity.json",
+    "label": "commit-validity",
+    "scenario": "partial-vote-commit",
+    "depth": 4
+  },
+  {
+    "file": "traces/partial-vote-commit-atomic-agreement.json",
+    "label": "atomic-agreement",
+    "scenario": "partial-vote-commit",
+    "depth": 7
+  },
+  {
+    "file": "traces/prepared-timeout-abort-atomic-agreement.json",
+    "label": "atomic-agreement",
+    "scenario": "prepared-timeout-abort",
+    "depth": 9
+  }
+]

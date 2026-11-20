@@ -1,0 +1,150 @@
+{
+  "label": "commit-validity",
+  "config": {
+    "name": "partial-vote-commit",
+    "participants": 2,
+    "variant": "partial-vote-commit",
+    "lossBudget": 0,
+    "duplicateBudget": 0,
+    "crashBudget": 0,
+    "maxStates": 100000
+  },
+  "depth": 4,
+  "steps": [
+    {
+      "action": "initial",
+      "state": {
+        "started": false,
+        "coordinatorUp": true,
+        "coordinatorDecision": "_",
+        "decisionBroadcast": false,
+        "observedVotes": [
+          "_",
+          "_"
+        ],
+        "participantVotes": [
+          "_",
+          "_"
+        ],
+        "participantDecisions": [
+          "_",
+          "_"
+        ],
+        "messages": [],
+        "losses": 0,
+        "duplicates": 0,
+        "crashes": 0
+      }
+    },
+    {
+      "action": "coordinator.start",
+      "state": {
+        "started": true,
+        "coordinatorUp": true,
+        "coordinatorDecision": "_",
+        "decisionBroadcast": false,
+        "observedVotes": [
+          "_",
+          "_"
+        ],
+        "participantVotes": [
+          "_",
+          "_"
+        ],
+        "participantDecisions": [
+          "_",
+          "_"
+        ],
+        "messages": [
+          "prepare:0",
+          "prepare:1"
+        ],
+        "losses": 0,
+        "duplicates": 0,
+        "crashes": 0
+      }
+    },
+    {
+      "action": "deliver.prepare:0.vote-Y",
+      "state": {
+        "started": true,
+        "coordinatorUp": true,
+        "coordinatorDecision": "_",
+        "decisionBroadcast": false,
+        "observedVotes": [
+          "_",
+          "_"
+        ],
+        "participantVotes": [
+          "Y",
+          "_"
+        ],
+        "participantDecisions": [
+          "_",
+          "_"
+        ],
+        "messages": [
+          "prepare:1",
+          "vote-Y:0"
+        ],
+        "losses": 0,
+        "duplicates": 0,
+        "crashes": 0
+      }
+    },
+    {
+      "action": "deliver.vote-Y:0",
+      "state": {
+        "started": true,
+        "coordinatorUp": true,
+        "coordinatorDecision": "_",
+        "decisionBroadcast": false,
+        "observedVotes": [
+          "Y",
+          "_"
+        ],
+        "participantVotes": [
+          "Y",
+          "_"
+        ],
+        "participantDecisions": [
+          "_",
+          "_"
+        ],
+        "messages": [
+          "prepare:1"
+        ],
+        "losses": 0,
+        "duplicates": 0,
+        "crashes": 0
+      }
+    },
+    {
+      "action": "coordinator.persist-commit",
+      "state": {
+        "started": true,
+        "coordinatorUp": true,
+        "coordinatorDecision": "C",
+        "decisionBroadcast": false,
+        "observedVotes": [
+          "Y",
+          "_"
+        ],
+        "participantVotes": [
+          "Y",
+          "_"
+        ],
+        "participantDecisions": [
+          "_",
+          "_"
+        ],
+        "messages": [
+          "prepare:1"
+        ],
+        "losses": 0,
+        "duplicates": 0,
+        "crashes": 0
+      }
+    }
+  ]
+}

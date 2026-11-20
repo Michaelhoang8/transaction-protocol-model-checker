@@ -1,0 +1,44 @@
+{
+  "captured_at_utc": "2026-11-20T23:35:48.202670+00:00",
+  "source": "Actual browser rendering of docs/report.html",
+  "recording": "Continuous automated browser review; not manual development footage",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "page_title": "Transaction protocol model checker",
+  "report_sha256_normalized_text": "60cb5c27eba9c106b366d284704edcb07b9efeb82193d9289cd3d85786082d19",
+  "video_sha256": "8ba69037a68859d89e5a994ad2fdf13ab7462645922a31b64c88096a296e6abe",
+  "captures": [
+    {
+      "path": "docs/screenshots/01_overview.png",
+      "section": "overview",
+      "sha256": "2d0726171c8784ff6745be51f5e0e31937ca0fd29df06c61098f6bf67e3d671a"
+    },
+    {
+      "path": "docs/screenshots/02_model.png",
+      "section": "model",
+      "sha256": "f9ab4a2892d1ae594387086f553e9fd3e22b670cdca50beba5235bd986a13dae"
+    },
+    {
+      "path": "docs/screenshots/03_partial-vote.png",
+      "section": "partial-vote",
+      "sha256": "61e74b812a8c410329ba5322352d61747738a42aef20786d2df512c47e6af0da"
+    },
+    {
+      "path": "docs/screenshots/04_timeout.png",
+      "section": "timeout",
+      "sha256": "ec171416ef0a0ee91956f3db883ec451a0d5084df3740c162096570b614b1f00"
+    },
+    {
+      "path": "docs/screenshots/05_blocking.png",
+      "section": "blocking",
+      "sha256": "80cc7e9d69c5d8334874a63a09407e96221bda8fc5cac4b9d4176be823c269f2"
+    },
+    {
+      "path": "docs/screenshots/06_bounds.png",
+      "section": "bounds",
+      "sha256": "78629c44d389709a4d183fd0bbc02a6f3c4eb9fe3877c4109dcf269959e0d6c0"
+    }
+  ]
+}
