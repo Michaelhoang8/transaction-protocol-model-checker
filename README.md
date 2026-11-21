@@ -1,5 +1,7 @@
 # Transaction protocol model checker
 
+**[View the report in your browser](https://Michaelhoang8.github.io/transaction-protocol-model-checker/)**
+
 A TypeScript finite-state breadth-first search for a deliberately small two-phase commit model. It checks atomic agreement, commit validity, and persistence of durable decisions and votes. Two unsafe variants produce actual shortest counterexamples. A correct-model witness shows why prepared participants depend on coordinator availability.
 
 **[Technical report](docs/report.html)** · [Screenshots](docs/screenshots/README.md) · [Review recording](docs/recordings/README.md) · [Model specification](docs/model-spec.md)
